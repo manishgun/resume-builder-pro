@@ -1,96 +1,96 @@
-# Resume Builder Pro v2.0
+# 🚀 Resume Builder Pro
 
-A professional, full-featured resume builder with a stunning landing page, guided onboarding, and a powerful **JSON-driven template engine**.
+A powerful, high-aesthetic, open-source resume builder built with **React 18** and **Vite**. Features a unique JSON-driven template engine, guided onboarding, and real-time live preview.
 
-## Quick Start
+![Resume Builder Demo](https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=1200)
 
-```bash
-npm install
-npm run dev
-```
+## ✨ Key Features
 
-## Architecture
+- **🏠 Premium Landing Page**: Modern, high-conversion design with smooth scroll animations.
+- **🧭 Step-by-Step Onboarding**: Smart experience-based flow that recommends templates based on your career level, photo preference, and industry.
+- **🎭 25+ Stunning Templates**: Curated library of professional designs (Executive, Creative, Tech, Minimal, and more).
+- **🎨 Infinite Customization**: Change accent colors instantly and watch the entire resume update in real-time.
+- **⚡ JSON-Driven Engine**: Templates are defined as pure JSON objects. Adding a new design requires zero additional React components.
+- **📄 Pro Preview & Export**: Centered live preview with high-fidelity scaling and clean HTML/PDF export options.
+- **🌙 Light/Dark Theming**: Modern UI that respects professional design standards.
 
-### JSON Template Engine
+## 🏗️ Architecture
 
-The core innovation: **templates are pure JSON data**, and a single `ResumeEngine` component renders any template. To add a new template, just add an object to `src/templates/templateDefs.js` — no new component code needed.
+The project is designed for scalability and performance:
 
-```
+```text
 src/
-├── templates/templateDefs.js    ← Template JSON definitions (8 templates)
-├── engine/ResumeEngine.jsx      ← Single renderer for all templates
-├── store/AppContext.jsx          ← Global state (useReducer)
-├── pages/
-│   ├── HomePage.jsx             ← Landing page
-│   ├── Onboard.jsx              ← 5-step onboarding flow
-│   ├── TemplatePicker.jsx       ← Template selection with live preview
-│   ├── Editor.jsx               ← Resume editor with live preview
-│   └── Preview.jsx              ← Final preview + download
+├── engine/          # Core ResumeEngine.jsx - The single renderer for ALL templates
+├── templates/       # templateDefs.js - The 25+ JSON definitions for all designs
+├── store/           # AppContext.jsx - Global state management (useReducer)
+├── pages/           # High-level screen components (HomePage, Editor, etc.)
+└── styles/          # Global tokens and design system (CSS Modules)
 ```
 
-### Flow
+### The JSON Template Engine
 
-1. **Landing Page** → Beautiful marketing page with CTA
-2. **Experience** → How many years of experience?
-3. **Photo** → With or without photo?
-4. **Columns** → 1 or 2 column layout?
-5. **Style** → Simple, Modern, Bold, or Contemporary?
-6. **Industry** → 12 industry options
-7. **Template Picker** → Filtered templates with live preview + accent color
-8. **Editor** → 7 sections, live preview, score ring
-9. **Preview** → Full preview, template switcher, download
+The core innovation is our **pure JSON template system**. A template is simply a config object:
 
-### Adding New Templates
-
-Add to `src/templates/templateDefs.js`:
-
-```js
+```javascript
 {
-  id: 'mytemplate',
-  name: 'My Template',
-  tags: ['1-column', 'without-photo', 'software'],
-  layout: 'single',          // 'single' | 'sidebar-left' | 'sidebar-right'
+  id: 'lumina',
+  layout: 'sidebar-left',
   fonts: { heading: 'Inter', body: 'Outfit' },
-  palette: {
-    headerBg: '#ffffff',
-    headerText: '#111111',
-    mainBg: '#ffffff',
-    mainText: '#333333',
-    mainMuted: '#666666',
-    accent: '{accent}',      // '{accent}' = replaced with user's chosen color
-    headingBorder: '{accent}',
+  style: {
+    sectionHeadStyle: 'uppercase-bar',
+    expStyle: 'minimal',
   },
   sections: {
-    header: ['nameBlock', 'contact'],
-    main: ['summary', 'experience', 'education', 'skills'],
-  },
-  style: {
-    sectionHeadStyle: 'simple-line',  // 8 heading styles available
-    expStyle: 'flat',                  // 6 experience styles available
-    skillStyle: 'chips',               // 7 skill styles available
-    photoStyle: 'circle',              // circle | circle-border | square-rounded | none
-    nameSize: 28,
-  },
+    sidebar: ['contact', 'skills'],
+    main: ['summary', 'experience', 'education']
+  }
 }
 ```
 
-## Templates
+## 🚀 Quick Start
 
-| Template | Layout              | Best For              |
-| -------- | ------------------- | --------------------- |
-| Atlas    | 2-col left sidebar  | Corporate, Tech       |
-| Nova     | 1-col dark header   | Software, Creative    |
-| Meridian | 1-col serif         | Executive, Finance    |
-| Prism    | 2-col right sidebar | Creative, Design      |
-| Horizon  | 1-col minimal       | ATS, Healthcare       |
-| Vertex   | 2-col dark          | Developers, Tech      |
-| Bloom    | 1-col soft          | Education, Healthcare |
-| Slate    | 2-col editorial     | Media, Marketing      |
+### Prerequisites
 
-## Tech Stack
+- Node.js (v18+)
+- npm or yarn
 
-- React 18 + Vite 5
-- CSS Modules
-- React Context + useReducer
-- Google Fonts: Inter + Outfit + DM Mono
-- Zero external dependencies
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/resume-builder-pro.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React 18](https://react.dev/)
+- **Build Tool**: [Vite 5](https://vitejs.dev/)
+- **Styling**: Vanilla CSS + CSS Modules (Zero external UI libraries for maximum performance)
+- **Typography**: [Google Fonts](https://fonts.google.com/) (Inter, Outfit, DM Mono)
+- **Icons**: SVG-based system for zero bloat
+
+## 🤝 Contributing
+
+We welcome contributions!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+Built with ♥ for job seekers everywhere.
