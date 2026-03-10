@@ -1,0 +1,260 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  height: 58px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 12px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.backBtn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  border-radius: 8px;
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.backBtn:hover {
+  border-color: var(--border2);
+  color: var(--text);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+.logoMark {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: white;
+}
+.logo span {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+.headerRight {
+  display: flex;
+  gap: 8px;
+}
+.printBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  transition: all 0.15s;
+}
+.printBtn:hover {
+  border-color: var(--border2);
+  color: var(--text);
+}
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+.downloadBtn:hover {
+  background: var(--accent2);
+  transform: translateY(-1px);
+}
+
+.body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  overflow: hidden;
+  height: calc(100vh - 58px);
+}
+
+.panel {
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+}
+.panelSection {
+  padding: 18px 16px;
+}
+.panelTitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 12px;
+}
+.divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.tplList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.tplBtn {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text2);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.tplBtn:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+.tplActive {
+  background: rgba(108, 99, 255, 0.1) !important;
+  color: var(--text) !important;
+  border-color: rgba(108, 99, 255, 0.2) !important;
+}
+.tplDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.tplCheck {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+.colorBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition:
+    transform 0.15s,
+    border-color 0.15s;
+}
+.colorBtn:hover {
+  transform: scale(1.2);
+}
+.colorActive {
+  border-color: white !important;
+  transform: scale(1.15);
+}
+
+.scoreCard {
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 14px;
+}
+.scoreNum {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.scoreText {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+.tip {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text2);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.tip span {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.canvas {
+  background: #dad7d0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.canvasLabel {
+  padding: 12px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #ccc9c2;
+  border-bottom: 1px solid #bbb9b2;
+  flex-shrink: 0;
+  text-align: center;
+}
+.canvasScroll {
+  flex: 1;
+  overflow: auto;
+  padding: 28px;
+  display: flex;
+  justify-content: center;
+}
+.canvasScroll > div {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.printOnly {
+  display: none;
+}
+@media print {
+  .printOnly {
+    display: block;
+  }
+}
